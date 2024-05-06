@@ -1,0 +1,33 @@
+# ==================================================
+# General parameters
+# ==================================================
+
+# NAME of this run
+name: "exp102-LRT2I-generate-embeddings"
+seed: 42
+
+# dataset
+dataset: "iclevr-lrt2i"
+dataset_path: "/net/csr-dgx1-04/data2/peixixio/GeNeVA_datasets/data-count-simple/lrt2i_train.h5"
+valid_dataset_path: "/net/csr-dgx1-04/data2/peixixio/GeNeVA_datasets/data-count-simple/lrt2i_val.h5"
+test_dataset_path: "/net/csr-dgx1-04/data2/peixixio/GeNeVA_datasets/data-count-simple/lrt2i_test.h5"
+glove_path: "/net/csr-dgx1-04/data2/peixixio/GeNeVA_datasets/data-count-simple/glove_lrt2i_count.txt"
+
+# rel_enhance
+rel_enhance: true
+
+# run
+batch_size: 50
+num_workers: 2
+
+# ==================================================
+# Special parameters
+# ==================================================
+
+fork: "exp95"
+model_path: "./results/experiments/exp96-lrt2i-count-simple-pretrain-tirg/snapshots/iclevr-lrt2i_pretrain_models_epoch_17.pth"
+
+sentence_encoder_type: "bert"
+text_dim: 768
+
+save_root_dir: "/net/csr-dgx1-04/data2/peixixio/GeNeVA_datasets/data-count-simple"

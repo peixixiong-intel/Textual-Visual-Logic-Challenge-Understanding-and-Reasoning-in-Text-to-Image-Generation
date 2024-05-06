@@ -1,0 +1,46 @@
+# ==================================================
+# General parameters
+# ==================================================
+
+# NAME of this run
+name: "exp96-lrt2i-count-simple-pretrain-tirg"
+seed: 42
+
+# dataset
+dataset: "iclevr-lrt2i"
+dataset_path: "/net/csr-dgx1-04/data2/peixixio/GeNeVA_datasets/data-count-simple/lrt2i_train.h5"
+valid_dataset_path: "/net/csr-dgx1-04/data2/peixixio/GeNeVA_datasets/data-count-simple/lrt2i_val.h5"
+test_dataset_path: "/net/csr-dgx1-04/data2/peixixio/GeNeVA_datasets/data-count-simple/lrt2i_test.h5"
+glove_path: "/net/csr-dgx1-04/data2/peixixio/GeNeVA_datasets/data-count-simple/glove_lrt2i_count.txt"
+
+# run
+batch_size: 32
+num_workers: 2
+epochs: 50
+eval_batch_size: 50
+
+# ==================================================
+# Model parameters
+# ==================================================
+
+depth: 4
+sentence_encoder_type: "bert"
+text_dim: 768
+hidden_dim: 512
+sa_fused: false
+sta_concat: true
+use_pos_emb: true
+sa_gate: false
+res_mask: false
+res_mask_post: true
+use_conv_final: false
+multi_channel_gate: true
+optimizer_type: "adam"
+lr: 0.0001
+weight_decay: 0.0
+loss_type: "l1"
+margin: 0.3
+k: 1
+gate_loss_gamma: 0.0
+text_detection_gamma: 0.0
+gate_detection_gamma: 0.0
